@@ -1,0 +1,174 @@
+{
+    "resources": [
+        {
+            "id": 1,
+            "title": "988 Suicide & Crisis Lifeline",
+            "description": "Free, confidential support for anyone in suicidal crisis or emotional distress. Available 24/7.",
+            "category": "crisis_hotline",
+            "url": "https://988lifeline.org",
+            "phone": "988",
+            "tags": [
+                "crisis",
+                "suicide",
+                "24/7",
+                "free",
+                "confidential"
+            ],
+            "is_crisis_resource": true,
+            "priority": 100
+        },
+        {
+            "id": 2,
+            "title": "Crisis Text Line",
+            "description": "Text HOME to 741741 to connect with a trained crisis counselor. Available 24/7.",
+            "category": "crisis_hotline",
+            "url": "https://www.crisistextline.org",
+            "phone": null,
+            "tags": [
+                "crisis",
+                "text",
+                "24/7",
+                "free",
+                "counselor"
+            ],
+            "is_crisis_resource": true,
+            "priority": 99
+        },
+        {
+            "id": 3,
+            "title": "SAMHSA National Helpline",
+            "description": "Free, confidential, 24/7, 365-day-a-year treatment referral and information service.",
+            "category": "treatment_referral",
+            "url": "https://www.samhsa.gov/find-help/national-helpline",
+            "phone": "1-800-662-4357",
+            "tags": [
+                "treatment",
+                "substance abuse",
+                "mental health",
+                "referral",
+                "24/7"
+            ],
+            "is_crisis_resource": true,
+            "priority": 95
+        },
+        {
+            "id": 4,
+            "title": "5-4-3-2-1 Grounding Technique",
+            "description": "A powerful grounding exercise: Name 5 things you see, 4 you feel, 3 you hear, 2 you smell, 1 you taste.",
+            "category": "coping_technique",
+            "url": null,
+            "phone": null,
+            "tags": [
+                "grounding",
+                "anxiety",
+                "panic",
+                "mindfulness",
+                "self-help"
+            ],
+            "is_crisis_resource": false,
+            "priority": 80
+        },
+        {
+            "id": 5,
+            "title": "Box Breathing",
+            "description": "Calming breathing technique: Breathe in 4 counts, hold 4, out 4, hold 4. Repeat 4 times.",
+            "category": "coping_technique",
+            "url": null,
+            "phone": null,
+            "tags": [
+                "breathing",
+                "anxiety",
+                "calm",
+                "relaxation",
+                "self-help"
+            ],
+            "is_crisis_resource": false,
+            "priority": 75
+        },
+        {
+            "id": 6,
+            "title": "Progressive Muscle Relaxation",
+            "description": "Systematically tense and release muscle groups to reduce physical tension and anxiety.",
+            "category": "coping_technique",
+            "url": null,
+            "phone": null,
+            "tags": [
+                "relaxation",
+                "anxiety",
+                "tension",
+                "body",
+                "self-help"
+            ],
+            "is_crisis_resource": false,
+            "priority": 70
+        },
+        {
+            "id": 7,
+            "title": "Psychology Today Therapist Finder",
+            "description": "Search for therapists, psychiatrists, and counselors by location and specialty.",
+            "category": "therapy_finder",
+            "url": "https://www.psychologytoday.com/us/therapists",
+            "phone": null,
+            "tags": [
+                "therapy",
+                "therapist",
+                "counselor",
+                "find help",
+                "professional"
+            ],
+            "is_crisis_resource": false,
+            "priority": 85
+        },
+        {
+            "id": 8,
+            "title": "BetterHelp Online Therapy",
+            "description": "Online therapy platform connecting you with licensed therapists from home.",
+            "category": "online_therapy",
+            "url": "https://www.betterhelp.com",
+            "phone": null,
+            "tags": [
+                "online",
+                "therapy",
+                "remote",
+                "convenient",
+                "licensed"
+            ],
+            "is_crisis_resource": false,
+            "priority": 60
+        },
+        {
+            "id": 9,
+            "title": "Headspace",
+            "description": "Meditation and mindfulness app with guided exercises for stress, sleep, and focus.",
+            "category": "app",
+            "url": "https://www.headspace.com",
+            "phone": null,
+            "tags": [
+                "meditation",
+                "mindfulness",
+                "app",
+                "sleep",
+                "stress"
+            ],
+            "is_crisis_resource": false,
+            "priority": 55
+        },
+        {
+            "id": 10,
+            "title": "NAMI (National Alliance on Mental Illness)",
+            "description": "Education, support groups, and advocacy for people affected by mental illness.",
+            "category": "support_organization",
+            "url": "https://www.nami.org",
+            "phone": "1-800-950-6264",
+            "tags": [
+                "support",
+                "education",
+                "advocacy",
+                "community",
+                "family"
+            ],
+            "is_crisis_resource": false,
+            "priority": 65
+        }
+    ]
+}
