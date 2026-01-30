@@ -18,7 +18,7 @@ An AI-powered mental health check-in chatbot providing supportive conversations,
 | Layer | Technology |
 |-------|------------|
 | Backend | Python 3.13, FastAPI, SQLAlchemy, Pydantic |
-| Database | PostgreSQL 15 |
+| Database | PostgreSQL 18 |
 | NLP/ML | scikit-learn, TextBlob, Sentence-Transformers |
 | LLM | Ollama (Llama 3.2 / Mistral) |
 | Deployment | Docker Compose |
