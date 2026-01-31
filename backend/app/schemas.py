@@ -12,8 +12,9 @@ from pydantic import BaseModel, EmailStr, Field
 class UserCreate(BaseModel):
     """Schema for user registration."""
     email: EmailStr
-    password: str = Field(min_length=8, max_length=100)
-    display_name: Optional[str] = Field(None, max_length=100)
+    username : str = Field(min_length=3, max_length=50, pattern=r"^[a-zA-Z0-9_]+$", description="Username must be 3-50 characters long and contain alphanumeric characters and underscores")
+    password: str = Field(min_length=8, max_length=128, description="Password must be at least 8 characters long")
+    full_name: Optional[str] = Field(None, max_length=100, description="User'S full name")
 
 
 class UserLogin(BaseModel):
@@ -24,11 +25,13 @@ class UserLogin(BaseModel):
 
 class UserResponse(BaseModel):
     """Schema for user info response."""
-    id: int
-    email: str
-    display_name: Optional[str]
+    id: str # UUID as string
+    email: EmailStr
+    username: str
+    full_name: Optional[str]
     is_active: bool
     created_at: datetime
+    updated_at: Optional[datetime]
 
     model_config = {"from_attributes": True}
 
@@ -37,11 +40,14 @@ class Token(BaseModel):
     """JWT token response."""
     access_token: str
     token_type: str = "bearer"
+    expires_in: int # Seconds until expiration
 
 
 class TokenData(BaseModel):
     """Decoded JWT token data."""
-    user_id: Optional[int] = None
+    user_id: Optional[str] = None # UUID as string
+    email: Optional[str] = None
+    exp: Optional[datetime] = None # Expiration time
 
 
 # ============== Chat Schemas ==============
@@ -49,17 +55,18 @@ class TokenData(BaseModel):
 class MessageCreate(BaseModel):
     """Schema for sending a chat message."""
     content: str = Field(min_length=1, max_length=5000)
-    conversation_id: Optional[int] = None  # None = start new conversation
+    conversation_id: Optional[str] = None  # None = start new conversation (UUID as string)
 
 
 class MessageResponse(BaseModel):
     """Schema for message response."""
-    id: int
-    role: str
+    id: str  # UUID as string
+    role: str  # "user" or "assistant"
     content: str
     detected_intent: Optional[str]
     sentiment_score: Optional[float]
-    crisis_severity: Optional[int]
+    sentiment_label: Optional[str]  # "positive", "negative", "neutral"
+    crisis_severity: Optional[int]  # 0-10 scale
     created_at: datetime
 
     model_config = {"from_attributes": True}
@@ -69,13 +76,13 @@ class ChatResponse(BaseModel):
     """Schema for chatbot response."""
     message: MessageResponse
     bot_response: MessageResponse
-    conversation_id: int
+    conversation_id: str  # UUID as string
     crisis_alert: Optional[dict] = None  # Included if crisis detected
 
 
 class ConversationResponse(BaseModel):
     """Schema for conversation with messages."""
-    id: int
+    id: str  # UUID as string
     title: Optional[str]
     created_at: datetime
     messages: List[MessageResponse] = []
@@ -93,7 +100,7 @@ class MoodCreate(BaseModel):
 
 class MoodResponse(BaseModel):
     """Schema for mood entry response."""
-    id: int
+    id: str  # UUID as string
     score: int
     notes: Optional[str]
     created_at: datetime
@@ -123,7 +130,7 @@ class PHQ9Submit(BaseModel):
 
 class AssessmentResult(BaseModel):
     """Schema for assessment result."""
-    id: int
+    id: str  # UUID as string
     assessment_type: str
     total_score: int
     severity_level: str
@@ -138,7 +145,7 @@ class AssessmentResult(BaseModel):
 
 class ResourceResponse(BaseModel):
     """Schema for resource response."""
-    id: int
+    id: str  # UUID as string
     title: str
     description: str
     category: str
