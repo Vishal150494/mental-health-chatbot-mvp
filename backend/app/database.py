@@ -20,7 +20,7 @@ DB_HOST=os.getenv("DB_HOST")
 DB_PORT=os.getenv("DB_PORT")
 DB_NAME=os.getenv("DB_NAME")
 
-# Database URL from environment
+# Database URL from environment variables
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
     f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"

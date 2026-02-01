@@ -10,6 +10,7 @@ __pycache__/
 backend/.env
 
 # Planning
+backend/app/utils/init_db.py
 planning/
 .tmp/
 directives/
