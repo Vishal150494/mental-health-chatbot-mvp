@@ -1,6 +1,6 @@
 """
 Database configuration and session management.
-Uses SQLAlchemy async with PostgreSQL.
+Uses SQLAlchemy async with PostgreSQL (asyncpg driver).
 """
 
 import os
@@ -13,10 +13,17 @@ from sqlalchemy.orm import DeclarativeBase
 # Load environment variables
 load_dotenv()
 
+# Databsae configuration from environment variables
+DB_USER=os.getenv("DB_USER")
+DB_PASSWORD=os.getenv("DB_PASSWORD")
+DB_HOST=os.getenv("DB_HOST")
+DB_PORT=os.getenv("DB_PORT")
+DB_NAME=os.getenv("DB_NAME")
+
 # Database URL from environment
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql+asyncpg://mh_user:mh_password@localhost:5432/mental_health_db"
+    f"postgresql+asyncpg://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 )
 
 # Create async engine
@@ -24,6 +31,8 @@ engine = create_async_engine(
     DATABASE_URL,
     echo=os.getenv("DEBUG", "false").lower() == "true",
     pool_pre_ping=True,
+    pool_size=5,
+    max_overflow=10,
 )
 
 # Session factory
