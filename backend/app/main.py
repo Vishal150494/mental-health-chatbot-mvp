@@ -7,7 +7,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes import auth, chat, mood, assessment
+from app.routes import auth  # chat, mood, assessment temporarily commented out
 from app.database import engine, Base
 
 
@@ -40,9 +40,9 @@ app.add_middleware(
 
 # Mount routers
 app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
-app.include_router(chat.router, prefix="/chat", tags=["Chat"])
-app.include_router(mood.router, prefix="/mood", tags=["Mood Tracking"])
-app.include_router(assessment.router, prefix="/assessment", tags=["Assessments"])
+#app.include_router(chat.router, prefix="/chat", tags=["Chat"])
+#app.include_router(mood.router, prefix="/mood", tags=["Mood Tracking"])
+#app.include_router(assessment.router, prefix="/assessment", tags=["Assessments"])
 
 
 @app.get("/", tags=["Health"])

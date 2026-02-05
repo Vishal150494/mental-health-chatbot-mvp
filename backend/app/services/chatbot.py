@@ -3,6 +3,8 @@ Main chatbot orchestration service.
 Coordinates NLP pipeline: intent → sentiment → crisis → response generation.
 """
 
+from uuid import UUID
+
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models import Message, Conversation
@@ -16,8 +18,8 @@ from app.services.resource_matcher import get_relevant_resources
 
 async def process_message(
     user_message: str,
-    conversation_id: int,
-    user_id: int,
+    conversation_id: UUID,
+    user_id: UUID,
     db: AsyncSession,
 ) -> ChatResponse:
     """

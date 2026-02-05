@@ -4,6 +4,7 @@ Pydantic schemas for request/response validation.
 
 from datetime import datetime
 from typing import Optional, List
+from uuid import UUID
 from pydantic import BaseModel, EmailStr, Field
 
 
@@ -25,7 +26,7 @@ class UserLogin(BaseModel):
 
 class UserResponse(BaseModel):
     """Schema for user info response."""
-    id: str # UUID as string
+    id: UUID
     email: EmailStr
     username: str
     full_name: Optional[str]
@@ -45,7 +46,7 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     """Decoded JWT token data."""
-    user_id: Optional[str] = None # UUID as string
+    user_id: Optional[UUID] = None
     email: Optional[str] = None
     exp: Optional[datetime] = None # Expiration time
 
@@ -55,12 +56,12 @@ class TokenData(BaseModel):
 class MessageCreate(BaseModel):
     """Schema for sending a chat message."""
     content: str = Field(min_length=1, max_length=5000)
-    conversation_id: Optional[str] = None  # None = start new conversation (UUID as string)
+    conversation_id: Optional[UUID] = None  # None = start new conversation
 
 
 class MessageResponse(BaseModel):
     """Schema for message response."""
-    id: str  # UUID as string
+    id: UUID
     role: str  # "user" or "assistant"
     content: str
     detected_intent: Optional[str]
@@ -76,13 +77,13 @@ class ChatResponse(BaseModel):
     """Schema for chatbot response."""
     message: MessageResponse
     bot_response: MessageResponse
-    conversation_id: str  # UUID as string
+    conversation_id: UUID
     crisis_alert: Optional[dict] = None  # Included if crisis detected
 
 
 class ConversationResponse(BaseModel):
     """Schema for conversation with messages."""
-    id: str  # UUID as string
+    id: UUID
     title: Optional[str]
     created_at: datetime
     messages: List[MessageResponse] = []
@@ -100,7 +101,7 @@ class MoodCreate(BaseModel):
 
 class MoodResponse(BaseModel):
     """Schema for mood entry response."""
-    id: str  # UUID as string
+    id: UUID
     score: int
     notes: Optional[str]
     created_at: datetime
@@ -130,7 +131,7 @@ class PHQ9Submit(BaseModel):
 
 class AssessmentResult(BaseModel):
     """Schema for assessment result."""
-    id: str  # UUID as string
+    id: UUID
     assessment_type: str
     total_score: int
     severity_level: str
@@ -145,7 +146,7 @@ class AssessmentResult(BaseModel):
 
 class ResourceResponse(BaseModel):
     """Schema for resource response."""
-    id: str  # UUID as string
+    id: UUID
     title: str
     description: str
     category: str

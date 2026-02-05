@@ -3,6 +3,7 @@ Chat routes - send messages, get conversation history.
 """
 
 from typing import Annotated, List
+from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy import select
@@ -12,7 +13,7 @@ from sqlalchemy.orm import selectinload
 from app.database import get_db
 from app.models import User, Conversation, Message
 from app.schemas import MessageCreate, ChatResponse, ConversationResponse, MessageResponse
-from app.routes.auth import get_current_user
+from app.utils.security import get_current_user
 from app.services.chatbot import process_message
 
 router = APIRouter()
@@ -78,7 +79,7 @@ async def get_conversations(
 
 @router.get("/conversation/{conversation_id}", response_model=ConversationResponse)
 async def get_conversation(
-    conversation_id: int,
+    conversation_id: UUID,
     current_user: Annotated[User, Depends(get_current_user)],
     db: AsyncSession = Depends(get_db),
 ):
