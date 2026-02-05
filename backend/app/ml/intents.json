@@ -1,0 +1,181 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "hello",
+                "hi",
+                "hey",
+                "good morning",
+                "good evening",
+                "hi there",
+                "hey there",
+                "howdy",
+                "what's up"
+            ],
+            "responses": [
+                "Hello! I'm here to chat and support you. How are you feeling today?",
+                "Hi there! It's good to hear from you. What's on your mind?",
+                "Hey! I'm glad you're here. How can I support you today?"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "bye",
+                "goodbye",
+                "see you",
+                "take care",
+                "later",
+                "goodnight",
+                "good night",
+                "i'm leaving",
+                "gotta go"
+            ],
+            "responses": [
+                "Take care of yourself! Remember, I'm here whenever you need to talk.",
+                "Goodbye for now. Be kind to yourself today.",
+                "See you later! Don't hesitate to come back whenever you need support."
+            ]
+        },
+        {
+            "tag": "mood_check",
+            "patterns": [
+                "i'm feeling",
+                "i feel",
+                "my mood is",
+                "i'm doing",
+                "today i feel",
+                "feeling kind of",
+                "not feeling great",
+                "feeling good",
+                "feeling bad"
+            ],
+            "responses": [
+                "I hear you. Would you like to tell me more about how you're feeling?",
+                "Thank you for sharing. It takes courage to express how we feel.",
+                "I appreciate you opening up. What's contributing to this feeling?"
+            ]
+        },
+        {
+            "tag": "anxiety",
+            "patterns": [
+                "i'm anxious",
+                "feeling anxious",
+                "anxiety",
+                "panic",
+                "worried",
+                "can't stop worrying",
+                "nervous",
+                "scared"
+            ],
+            "responses": [
+                "Anxiety can feel overwhelming. Would you like to try a grounding exercise together?",
+                "I hear that you're feeling anxious. That's really hard. Can you tell me what's on your mind?",
+                "It's okay to feel anxious. Let's take a deep breath together."
+            ]
+        },
+        {
+            "tag": "depression",
+            "patterns": [
+                "i'm depressed",
+                "feeling depressed",
+                "sad",
+                "hopeless",
+                "empty",
+                "numb",
+                "can't feel anything",
+                "nothing matters"
+            ],
+            "responses": [
+                "I'm sorry you're feeling this way. Depression is really difficult. I'm here for you.",
+                "Thank you for trusting me with this. These feelings are valid. Would you like to talk about what's going on?",
+                "It takes strength to reach out when you're feeling this way. I'm listening."
+            ]
+        },
+        {
+            "tag": "stress",
+            "patterns": [
+                "stressed",
+                "overwhelmed",
+                "too much",
+                "can't handle",
+                "pressure",
+                "exhausted",
+                "burnt out",
+                "burnout"
+            ],
+            "responses": [
+                "It sounds like you're carrying a lot right now. What's weighing on you the most?",
+                "Being overwhelmed is exhausting. Let's talk through what's going on.",
+                "Stress can really pile up. Would it help to break down what you're dealing with?"
+            ]
+        },
+        {
+            "tag": "gratitude",
+            "patterns": [
+                "thank you",
+                "thanks",
+                "appreciate it",
+                "grateful",
+                "that helps"
+            ],
+            "responses": [
+                "You're welcome! I'm always here when you need support.",
+                "I'm glad I could help. Take care of yourself.",
+                "Anytime! Remember, you're not alone in this."
+            ]
+        },
+        {
+            "tag": "resource_request",
+            "patterns": [
+                "can you help me find",
+                "recommend",
+                "suggest",
+                "resources",
+                "where can i get help",
+                "who can i talk to",
+                "therapist",
+                "counselor"
+            ],
+            "responses": [
+                "I'd be happy to help you find some resources. What area would you like support with?",
+                "There are many resources available. Are you looking for crisis support, therapy, or self-help tools?",
+                "I can point you to some helpful resources. What kind of support are you seeking?"
+            ]
+        },
+        {
+            "tag": "affirmation",
+            "patterns": [
+                "yes",
+                "okay",
+                "sure",
+                "alright",
+                "sounds good",
+                "let's do it",
+                "i'd like that"
+            ],
+            "responses": [
+                "Great! Let's continue.",
+                "Okay, I'm here with you.",
+                "Sounds good. What would you like to focus on?"
+            ]
+        },
+        {
+            "tag": "negation",
+            "patterns": [
+                "no",
+                "not really",
+                "don't want to",
+                "nope",
+                "never mind",
+                "forget it"
+            ],
+            "responses": [
+                "That's okay. We can talk about something else if you'd like.",
+                "No problem. I'm here whenever you're ready.",
+                "I understand. Just let me know if there's anything else I can help with."
+            ]
+        }
+    ]
+}
